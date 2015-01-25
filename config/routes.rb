@@ -1,17 +1,17 @@
 Rails.application.routes.draw do
-  get 'products/show'
-
-  get 'products/history'
-
-  get 'products/status'
-
-  get 'products/prerent' => 'products#prerent'
-
-  post 'products/rent' => 'products#rent'
-
-  get 'products/return' => 'products#prereturn'
-
-  post 'products/return' => 'products#return'
+  
+  resources :products do
+    member do
+      get 'history'
+      get 'rent', to: 'products#prerent'
+      post 'rent', to: 'products#postrent'
+      get 'return', to: 'products#prereturn'
+      post 'return', to: 'products#postreturn'
+    end
+    collection do
+      get 'search'
+    end
+  end
 
   resources :users
   
