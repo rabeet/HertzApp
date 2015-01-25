@@ -65,13 +65,14 @@ class UsersController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
-      @user = User.find(params[:id])
+      puts params
+      @user = User.find(params[:session][:id])
     end
     
     def loggedIn
-      @user = User.find_by(id:params[:id])
+      @user = User.find_by(id: params[:id])
       if @user.nil?
-        redirect_to login_url
+        puts "NO USER"
       end
     end
 
