@@ -16,4 +16,6 @@
 /tmp
 
 # Ignore .c9 meta files
+.c9
+.c9/
 .c9/*
