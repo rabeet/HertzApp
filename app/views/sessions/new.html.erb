@@ -1,0 +1,39 @@
+<% provide(:title, "Sign In") %>
+
+<center><h1>Welcome to Hertz Equipment Rental Picture Electronic Storage | HERPES</h1></center>
+
+<div class="row">
+<div class="col-md-6 col-md-offset-3">
+<% if flash[:alert] %>
+  <p id = "danger"><%= flash[:alert]  %></p>
+<% end %>
+<% if flash[:notice] %>
+  <p id = "notice"><%= flash[:notice]  %></p>
+<% end %>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <strong>Sign In</strong>
+  </div>
+  <div class="panel-body">
+    <%= form_for(:session, url: login_path) do |f| %>
+      <%= f.label :email %>
+      <%= f.text_field :email, class: 'form-control' %>
+      
+      <%= f.label :password %>
+      <%= f.password_field :password, class: 'form-control' %>
+      
+      <p></p>
+      <center>
+      <%= f.submit "Sign In", class: "btn btn-primary" %>
+      </center>
+    <% end %>
+  </div>
+  <div class="panel-footer">Not Registered?</div>
+</div>
+</div>
+</div>
+
+<div class="row">
+<p></p>
+<center><p>&copy Team Gibson Oswald Oliver Fatmi | GOOF</p></center>
+</div>
