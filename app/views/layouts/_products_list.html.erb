@@ -11,8 +11,8 @@
       <tbody>
         <% all_products.each do |a| %>
           <tr>
-            <% if a.name %>
-              <td>Product <%= a.id %> - <%= a.name %></td>
+            <% if a.ic %>
+              <td><%= a.ic %></td>
             <% else %>
               <td>Product <%= a.id %></td>
             <% end %>
