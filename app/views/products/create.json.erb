@@ -1,0 +1,11 @@
+{
+  <% if @success == 1 %>
+  success=true,
+  id=<%= @product.id %>,
+  ic_num=<%= @product.ic %>,
+  name="<%= @product.name %>"
+  <% else %>
+  success=false,
+  message="<%= @message %>"
+  <% end %>
+}
