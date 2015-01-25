@@ -7,6 +7,7 @@ class ProductsController < ApplicationController
   end
   
   def show
+    @transactions = @product.transactions
   end
   
   def new

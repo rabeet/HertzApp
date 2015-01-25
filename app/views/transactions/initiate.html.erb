@@ -1,0 +1,24 @@
+<%= form_for(@transaction, url: submit_transaction_path) do |f| %>
+  <% if @transaction.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@transaction.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @transaction.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :Transaction_Type %><br>
+    <%= f.collection_select :type, Provider.order(:name),:id,:name, include_blank: false %>
+  </div>
+  <div class="field">
+    <%= f.label :Images %><br>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

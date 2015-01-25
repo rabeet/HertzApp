@@ -1,2 +1,28 @@
-<h1>Products#show</h1>
-<p>Find me in app/views/products/show.html.erb</p>
+<h1>Equipment IC# <%= @product.ic %></h1>
+
+<%= link_to 'Initiate Transaction', initiate_transaction_path, class: 'btn btn-large btn-success' %>
+
+<div class="media">
+  <div class="media-body">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Past Transactions History</th>
+          <th>Date Created</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+    
+      <tbody>
+        <% @transactions.each do |a| %>
+          <tr>
+            <td><%= a.type %></td>
+            <td><%= a.created_at %></td>
+            <td><%= link_to 'View', 'transactions/'+a.id.to_s, class: 'btn btn-xs btn-default' %>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+<%= link_to 'Initiate Transaction', initiate_transaction_path, class: 'btn btn-large btn-success' %>

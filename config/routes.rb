@@ -15,6 +15,12 @@ Rails.application.routes.draw do
 
   resources :users
   
+  get 'new_transaction' => 'transactions#new'
+  post 'new_transaction' => 'transactions#create'
+  get 'transactions/:id' => 'transactions#show'
+  get 'products/:id/new' => 'transactions#initiate', as: :initiate_transaction
+  post 'products/:id/new' => 'transactions#initiate', as: :submit_transaction
+  # resources :transactions
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
