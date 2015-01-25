@@ -1,2 +1,14 @@
-<h1>Products#show</h1>
-<p>Find me in app/views/products/show.html.erb</p>
+{
+  num_pruducts=<%= @num_products %>,
+  products=[
+  <% i = 0 %>
+  <% @products.each do |product| %>
+    <%= i == 0 ? "" : ", " %>
+    {
+      id=<%= product.id %>,
+      ic_num=<%= product.ic %>,
+      name="<%= product.name %>"
+    }
+  <% end %>
+  ]
+}
