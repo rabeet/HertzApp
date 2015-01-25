@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :loggedIn
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  # before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   # GET /users
   # GET /users.json
@@ -70,9 +70,9 @@ class UsersController < ApplicationController
     end
     
     def loggedIn
-      @user = User.find_by(id: params[:id])
+      @user = User.find_by(id: session[:user_id])
       if @user.nil?
-        puts "NO USER"
+        redirect_to login_url
       end
     end
 

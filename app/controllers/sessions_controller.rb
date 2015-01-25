@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
   def new
     if logged_in?
-      user = User.find(session[:id])
+      user = User.find(session[:user_id])
       redirect_to user
     end
   end
