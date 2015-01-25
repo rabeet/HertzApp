@@ -1,0 +1,11 @@
+{
+  <% if @success == 1 %>
+  success=true,
+  id=<%= @id %>,
+  ic_num=<%= @ic %>,
+  name="<%= @name %>"
+  <% else %>
+  success=false,
+  message="<%= @message %>"
+  <% end %>
+}
