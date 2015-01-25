@@ -1,5 +1,7 @@
 <h1>Equipment IC# <%= @product.ic %></h1>
 
+<p id="notice"><%= notice %></p>
+
 <%= link_to 'Initiate Transaction', initiate_transaction_path, class: 'btn btn-large btn-success' %>
 
 <div class="media">
@@ -16,9 +18,13 @@
       <tbody>
         <% @transactions.each do |a| %>
           <tr>
-            <td><%= a.type %></td>
+            <% if a.transtype.nil? %>
+              <td><%= "Transaction type N/A"  %></td>
+            <% else %>
+              <td><%= a.transtype %></td>
+            <% end %>
             <td><%= a.created_at %></td>
-            <td><%= link_to 'View', 'transactions/'+a.id.to_s, class: 'btn btn-xs btn-default' %>
+            <td><%= link_to 'View', '/transactions/'+a.id.to_s, class: 'btn btn-xs btn-default' %>
           </tr>
         <% end %>
       </tbody>

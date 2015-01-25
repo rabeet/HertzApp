@@ -19,12 +19,12 @@ Rails.application.routes.draw do
   post 'new_transaction' => 'transactions#create'
   get 'transactions/:id' => 'transactions#show'
   get 'products/:id/new' => 'transactions#initiate', as: :initiate_transaction
-  post 'products/:id/new' => 'transactions#initiate', as: :submit_transaction
+  post 'products/:id' => 'transactions#submit', as: :submit_transaction
   # resources :transactions
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
-  root 'products#index'
+  root 'transactions#new'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -1,12 +1,12 @@
 <header class="navbar navbar-default">
   <div class="container-fluid">
-    <%= link_to "HERPS", root_path, id: "logo" %>
+    <%= link_to image_tag("https://images.hertz.com/rac/misc/refresh09/hertz-car-rental-logo.png"), root_path, id: "logo" %>
     <nav>
       <ul class="nav nav-tabs">
         <li><%= link_to current_user.name, current_user %></li>
         <li><%= link_to "New Transaction",   new_transaction_path %></li>
-        <li><%= link_to "Products List",   products_path %></li>
-        <li><%= link_to "Log out", logout_path, method: "delete" %></li>
+        <li><%= link_to "Equipments List",   products_path %></li>
+        <li><%= link_to "Log out", logout_path, method: "delete", class: "nav navbar-right" %></li>
       </ul>
     </nav>
   </div>
