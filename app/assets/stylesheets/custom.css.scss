@@ -7,6 +7,14 @@ $gray-medium-light: #eaeaea;
 
 /* universal */
 
+#notice {
+  color: green;
+}
+
+#danger {
+  color: red;
+}
+
 html{
   overflow-y: scroll;
 }
