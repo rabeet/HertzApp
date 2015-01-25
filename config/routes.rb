@@ -1,4 +1,18 @@
 Rails.application.routes.draw do
+  get 'products/show'
+
+  get 'products/history'
+
+  get 'products/status'
+
+  get 'products/prerent' => 'products#prerent'
+
+  post 'products/rent' => 'products#rent'
+
+  get 'products/return' => 'products#prereturn'
+
+  post 'products/return' => 'products#return'
+
   resources :users
   
   get 'login' => 'sessions#new'

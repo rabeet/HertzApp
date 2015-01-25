@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  product_id: 1
+  date: 2015-01-25
+  type: 1
+  north: MyString
+
+two:
+  product_id: 1
+  date: 2015-01-25
+  type: 1
+  north: MyString
